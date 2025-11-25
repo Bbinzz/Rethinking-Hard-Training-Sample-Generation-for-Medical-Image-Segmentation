@@ -1,5 +1,5 @@
 <center>
-<h1>ControlLoRA Version 3: LoRA Is All You Need to Control the Spatial Information of Stable Diffusion
+<h1>Rethinking-Hard-Training-Sample-Generation-for-Medical-Image-Segmentation
 </h1>
 <a href="https://huggingface.co/HighCWu/control-lora-v3">[Models]</a>
 <a href="https://huggingface.co/spaces/HighCWu/control-lora-v3">[Spaces]</a>
@@ -7,8 +7,6 @@
 
 ## Introduction
 
-I introduce a faster and lighter way to add image conditions to control the spatial information of the generated images of stable diffusion. To do this, LoRA is all you need.
-The idea is very simple, increase the input channel size of the first convolution of stable diffusion `unet` by 1 times and fill the new weight part with zero values. Then configure and train a LoRA like training a normal linear&conv2d LoRA of `text-to-image`, the only difference is that you need to provide the noise latent and  the conditional image latent together as the inputs to `unet`. After training, we can even merge the LoRA weights completely into `unet`.
 
 
 ![Canny Result](./imgs/canny_vermeer.png)
@@ -37,14 +35,14 @@ I used a high learning rate and a short number of steps for training, and the da
 ## Prepare Environment
 
 ```sh
-git clone https://github.com/HighCWu/control-lora-v3
-cd control-lora-v3
-pip install -r requirements.txt
+pip install -r environment.yml
 ```
 
 ## Prepare Dataset
 
-Make a dataset like [HighCWu/diffusiondb_2m_first_5k_canny](https://huggingface.co/datasets/HighCWu/diffusiondb_2m_first_5k_canny) or custom a dataset script like [`exps/sd1_5_tile_pair_data.py`](exps/sd1_5_tile_pair_data.py).
+downloading testing dataset and move it into ./data/TestDataset/, which can be found in this Google Drive Link (327.2MB). It contains five sub-datsets: CVC-300 (60 test samples), CVC-ClinicDB (62 test samples), CVC-ColonDB (380 test samples), ETIS-LaribPolypDB (196 test samples), Kvasir (100 test samples).
+
+downloading training dataset and move it into ./data/TrainDataset/, which can be found in this Google Drive Link (399.5MB). It contains two sub-datasets: Kvasir-SEG (900 train samples) and CVC-ClinicDB (550 train samples).
 
 ## Training
 
@@ -253,22 +251,9 @@ image = pipe(
 image.show()
 ```
 
-## TODO
-
-[ ] Fix train_sdxl validate pipeline `NaN`.
-
-[ ] Release more sdxl control-lora-v3 pretrained models.
-
-[ ] Train multi lora at the same time to support inference multi lora. 
 
 
-## Citation
 
-    @software{wu2024controllorav3,
-        author = {Wu Hecong},
-        month = {7},
-        title = {{ControlLoRA Version 3: LoRA Is All You Need to Control the Spatial Information of Stable Diffusion}},
-        url = {https://github.com/HighCWu/control-lora-3},
-        version = {1.0.0},
         year = {2024}
     }
+
