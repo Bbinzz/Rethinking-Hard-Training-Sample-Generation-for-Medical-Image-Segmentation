@@ -1,0 +1,28 @@
+accelerate launch train.py \
+ --pretrained_model_name_or_path=/data1/wzb/pretrainmodel/models--runwayml--stable-diffusion-v1-5/snapshots/1d0c4ebf6ff58a5caecab40fa1406526bca4b5b9 \
+ --isuse_disloss=use \
+ --tracker_project_name=ablation_10-9 \
+ --output_dir=/data1/wzb/hardsamply \
+ --dataset_name=/data1/wzb/dataset/polyp/polyp_dataset/traindata_size100 \
+ --proportion_empty_prompts=0.1 \
+ --conditioning_image_column=guide \
+ --image_column=image --caption_column=text \
+ --rank=16 \
+ --lora_adapter_name=hardsamply \
+ --init_lora_weights=gaussian \
+ --loraplus_lr_ratio=1.0 \
+ --half_or_full_lora=half_skip_attn \
+ --extra_lora_rank_modules conv_in \
+ --extra_lora_ranks 64 \
+ --resolution=512 \
+ --learning_rate=0.0001 \
+ --seed=42 \
+ --train_batch_size=4 \
+ --gradient_accumulation_steps=1 \
+ --mixed_precision=fp16 \
+ --enable_xformers_memory_efficient_attention \
+ --checkpointing_steps=5000 \
+ --validation_steps=5000 \
+ --max_train_steps=50000 \
+ --resume_from_checkpoint=latest \
+ --report_to tensorboard \
