@@ -249,6 +249,9 @@ image = pipe(
 image.show()
 ```
 }
+
+## Cite
+
 @article{WAN2026112533,
 title = {Rethinking hard training sample generation for medical image segmentation},
 journal = {Pattern Recognition},
@@ -259,6 +262,7 @@ issn = {0031-3203},
 doi = {https://doi.org/10.1016/j.patcog.2025.112533},
 author = {Zhibin Wan and Zhiqiang Gao and Mingjie Sun and Yang Yang and Cao Min and Hongliang He and Guohong Fu},
 }
-}
+
+
 
 
