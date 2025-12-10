@@ -1,15 +1,13 @@
 <center>
 <h1>Rethinking-Hard-Training-Sample-Generation-for-Medical-Image-Segmentation
 </h1>
+<a href="https://www.sciencedirect.com/science/article/abs/pii/S0031320325011963">[article]</a>
 <a href="https://huggingface.co/HighCWu/control-lora-v3">[Models]</a>
 <a href="https://huggingface.co/spaces/HighCWu/control-lora-v3">[Spaces]</a>
 </center>
 
 ## Introduction
 
-
-
-![Canny Result](./imgs/canny_vermeer.png)
 
 
 ***Note:*** It should be noted that control lora v3 uses the latent encoded by `vae` as conditional input, so it is not very sensitive to certain types of images and needs to be processed in advance to encode images that can retain details.
@@ -250,10 +248,17 @@ image = pipe(
 ).images[0]
 image.show()
 ```
+}
+@article{WAN2026112533,
+title = {Rethinking hard training sample generation for medical image segmentation},
+journal = {Pattern Recognition},
+volume = {172},
+pages = {112533},
+year = {2026},
+issn = {0031-3203},
+doi = {https://doi.org/10.1016/j.patcog.2025.112533},
+author = {Zhibin Wan and Zhiqiang Gao and Mingjie Sun and Yang Yang and Cao Min and Hongliang He and Guohong Fu},
+}
+}
 
-
-
-
-        year = {2024}
-    }
 
