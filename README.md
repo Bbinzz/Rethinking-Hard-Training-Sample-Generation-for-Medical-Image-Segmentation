@@ -5,7 +5,7 @@
 <a href="https://pan.baidu.com/s/15Divpt6B3SOnzkf_L_PkpQ?pwd=1111">[checkpoint]</a>
 </center>
 
-***Note:*** extra code is 1111
+***Note:*** Extraction code is 1111
 
 ## Introduction
 
@@ -266,6 +266,7 @@ doi = {https://doi.org/10.1016/j.patcog.2025.112533},
 author = {Zhibin Wan and Zhiqiang Gao and Mingjie Sun and Yang Yang and Cao Min and Hongliang He and Guohong Fu},
 }
 ```
+
 
 
 
